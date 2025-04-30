@@ -8,230 +8,36 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-a..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     * {margin: 0; padding: 0; box-sizing: border-box;}
-    body {
-        font-family: 'Poppins', sans-serif;
-        max-height: 100vh;
-        background-color: rgb(25 6 41);
-        background-repeat: no-repeat;
-        height: 100%;
-        background-position: center;
-        background-size: cover;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.5rem 10%;
-      background-color: white;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #ec8aea;
-    }
-    nav a {
-    color: #1b0527;
-    text-decoration: none;
-    font-size: .97rem;
-    font-weight: 600;
-    letter-spacing: .7px;
-    padding: 1rem;
-    padding: 0.4rem 1rem;
-    transition: all 0.3s ease !important;
-}
-
-    nav a:hover {
-        background-color: #1b0527;
-        color: #fff;
-        border-radius: 100px;
-    }
-
-    main {
-      padding: 2rem 10%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-
-    .profile-img {
-      border-radius: 50%;
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      margin-bottom: 1rem;
-      border: 4px solid #ec8aea;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      color: #e48def;
-      margin-bottom: 0.5rem;
-    }
-    .about p {
-    color: #fff;
-    font-weight: 300;
-}
-.about p:first-of-type {
-    margin-bottom: 20px;
-}
-
-.title {
-    font-size: 1.2rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    background: linear-gradient(120deg, #db4cff 20.69%, #44b1ff 50.19%, #fd4747 79.69%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 1rem;
-    display: inline-block;
-}
-
-    .about {
-      max-width: 900px;
-      margin: 2rem auto;
-      font-size: 1rem;
-      color: #555;
-    }
-
-    .social {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      margin: 2rem 0;
-    }
-
-    .social a {
-    text-decoration: none;
-    color: #ec8aea;
-    border: 2px solid #ec8aea;
-    border-radius: 50%;
-    padding: 0.5rem;
-    width: 45px;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-}
-
-.social a:hover {
-    background-color: #ec8aea;
-    color: #fff;
-}
-
-.button {
-    background-color: #ec8aea;
-    color: white;
-    padding: 15px 35px;
-    border: 1px solid #ec8aea;
-    border-radius: 30px;
-    font-size: 1rem;
-    text-transform: uppercase;
-    font-weight: 500;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    font-size: 15px;
-}
-button.button:hover {
-    background-color: inherit;
-}
-
-    section.projects {
-      margin-top: 2rem;
-      width: 100%;
-    }
-
-    .projects h2 {
-      text-align: center;
-      margin-bottom: 2rem;
-      color: #ec8aea;
-      font-size: 34px;
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      padding: 0 5%;
-    }
-
-    .project-card {
-      background: white;
-      border-radius: 12px;
-      padding: 30px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-    .project-card h3 {
-    font-size: 26px;
-    margin-bottom: 15px;
-    line-height: 1.4;
-    font-weight: 600;
-}
-
-    .project-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .skills {
-    margin-top: 4rem;
-    text-align: center;
-    }
-
-    .skills h2 {
-        text-align: center;
-      margin-bottom: 2rem;
-      color: #ec8aea;
-      font-size: 34px;
-    }
-
-    .skills-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
-    }
-
-    .skill {
-    background: white;
-    padding: 0.8rem 1.2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    color: #244D61;
-    font-weight: 600;
-    font-size: 0.95rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: transform 0.3s ease;
-    }
-
-    .skill i {
-    font-size: 1.2rem;
-    }
-
-    .skill:hover {
-    transform: translateY(-4px);
-    background-color: #f0f0f0;
-    }
-
-
-    footer {
-      margin-top: 4rem;
-      padding: 1rem;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #999;
-    }
-
+    body {font-family: 'Poppins', sans-serif; max-height: 100vh; background-color: rgb(25 6 41); background-repeat: no-repeat; height: 100%; background-position: center; background-size: cover;}
+    header {display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 10%; background-color: white; box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;}
+    .logo {font-size: 1.5rem; font-weight: 700; color: #ec8aea;}
+    nav a {color: #1b0527; text-decoration: none; font-size: .97rem; font-weight: 600; letter-spacing: .7px; padding: 1rem; padding: 0.4rem 1rem; transition: all 0.3s ease !important;}
+    nav a:hover {background-color: #1b0527; color: #fff; border-radius: 100px;}
+    main {padding: 2rem 10%; display: flex; flex-direction: column; align-items: center; text-align: center;}
+    .profile-img {border-radius: 50%; width: 150px; height: 150px; object-fit: cover; margin-bottom: 1rem; border: 4px solid #ec8aea;}
+    h1 {font-size: 2.5rem; color: #e48def; margin-bottom: 0.5rem;}
+    .about p {color: #fff; font-weight: 300;}
+    .about p:first-of-type {margin-bottom: 20px;}
+    .title {font-size: 1.2rem; letter-spacing: 2px; text-transform: uppercase; background: linear-gradient(120deg, #db4cff 20.69%, #44b1ff 50.19%, #fd4747 79.69%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1rem; display: inline-block;}
+    .about {max-width: 900px; margin: 2rem auto; font-size: 1rem; color: #555;}
+    .social {display: flex; gap: 1rem; justify-content: center; margin: 2rem 0;}
+    .social a {text-decoration: none; color: #ec8aea; border: 2px solid #ec8aea; border-radius: 50%; padding: 0.5rem; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;}
+    .social a:hover {background-color: #ec8aea; color: #fff;}
+    .button {background-color: #ec8aea; color: white; padding: 15px 35px; border: 1px solid #ec8aea; border-radius: 30px; font-size: 1rem; text-transform: uppercase; font-weight: 500; letter-spacing: 1px; cursor: pointer; transition: background 0.3s ease; font-size: 15px;}
+    button.button:hover {background-color: inherit;}
+    section.projects {margin-top: 2rem; width: 100%;}
+    .projects h2 {text-align: center; margin-bottom: 2rem; color: #ec8aea; font-size: 34px;}
+    .project-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; padding: 0 5%;}
+    .project-card {background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s;}
+    .project-card h3 {font-size: 26px; margin-bottom: 15px; line-height: 1.4; font-weight: 600;}
+    .project-card:hover {transform: translateY(-5px);}
+    .skills {margin-top: 4rem; text-align: center;}
+    .skills h2 {text-align: center; margin-bottom: 2rem; color: #ec8aea; font-size: 34px;}
+    .skills-grid {display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem;}
+    .skill {background: white; padding: 0.8rem 1.2rem; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); color: #244D61; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem; transition: transform 0.3s ease;}
+    .skill i {font-size: 1.2rem;}
+    .skill:hover {transform: translateY(-4px); background-color: #f0f0f0;}
+    footer {margin-top: 4rem; padding: 1rem; text-align: center; font-size: 0.9rem; color: #999;}
     @media (max-width: 768px) {
       h1 {font-size: 2rem;}
       .about {padding: 0 1rem;}
@@ -271,14 +77,39 @@ button.button:hover {
     <section class="projects">
       <h2>Projects</h2>
       <div class="project-grid">
-        <!-- Placeholder: You'll send me project info for this -->
         <div class="project-card">
-          <h3>Project Title</h3>
+          <h3>Conceptual Construction Corp</h3>
           <p>Short description of the project goes here. We'll update this with real content.</p>
+          <a href="https://conceptualconstructionny.com/">View Website</a>
         </div>
         <div class="project-card">
-          <h3>Another Project</h3>
+          <h3>ADS Care</h3>
           <p>Highlights of another project Mitul worked on. Screenshot or live link can be added.</p>
+          <a href="https://adscare.com.au/">View Website</a>
+        </div>
+      </div>
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>Michael Laps</h3>
+          <p>Short description of the project goes here. We'll update this with real content.</p>
+          <a href="https://michaellaps.com/">View Website</a>
+        </div>
+        <div class="project-card">
+          <h3>Lady K Hair Artistry</h3>
+          <p>Highlights of another project Mitul worked on. Screenshot or live link can be added.</p>
+          <a href="https://ladykhairartistry.com/">View Website</a>
+        </div>
+      </div>
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>InSite Marketing</h3>
+          <p>Short description of the project goes here. We'll update this with real content.</p>
+          <a href="https://insitemarketing.com/">View Website</a>
+        </div>
+        <div class="project-card">
+          <h3>CL Compensation Lawyers</h3>
+          <p>Highlights of another project Mitul worked on. Screenshot or live link can be added.</p>
+          <a href="https://clcomplawyers.com.au/">View Website</a>
         </div>
       </div>
     </section>
