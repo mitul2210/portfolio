@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mitul Patel | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-a..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     * {margin: 0; padding: 0; box-sizing: border-box;}
     body {
@@ -32,28 +33,27 @@
     .logo {
       font-size: 1.5rem;
       font-weight: 700;
-      color: #244D61;
+      color: #ec8aea;
     }
-
     nav a {
-        color: #dd90f5;
-        text-decoration: none;
-        font-size: .97rem;
-        font-weight: 600;
-        letter-spacing: .7px;
-        padding: 1rem;
-        padding: 0.4rem 1rem;
-    }
+    color: #1b0527;
+    text-decoration: none;
+    font-size: .97rem;
+    font-weight: 600;
+    letter-spacing: .7px;
+    padding: 1rem;
+    padding: 0.4rem 1rem;
+    transition: all 0.3s ease !important;
+}
 
     nav a:hover {
-        background-color: #dd90f5;
+        background-color: #1b0527;
         color: #fff;
-        border-radius: 1rem;
-        transition: all.3s ease-in-out;
+        border-radius: 100px;
     }
 
     main {
-      padding: 4rem 10%;
+      padding: 2rem 10%;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -66,25 +66,32 @@
       height: 150px;
       object-fit: cover;
       margin-bottom: 1rem;
-      border: 4px solid #244D61;
+      border: 4px solid #ec8aea;
     }
 
     h1 {
       font-size: 2.5rem;
-      color: #244D61;
+      color: #e48def;
       margin-bottom: 0.5rem;
     }
+    .about p {
+    color: #fff;
+    font-weight: 300;
+}
+.about p:first-of-type {
+    margin-bottom: 20px;
+}
 
-    .title {
-      font-size: 1.2rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      background: linear-gradient(120deg, #7fff67 20.69%, #44b1ff 50.19%, #fda847 79.69%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 1rem;
-      display: inline-block;
-    }
+.title {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: linear-gradient(120deg, #db4cff 20.69%, #44b1ff 50.19%, #fd4747 79.69%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
 
     .about {
       max-width: 900px;
@@ -101,51 +108,52 @@
     }
 
     .social a {
-      text-decoration: none;
-      color: #244D61;
-      border: 2px solid #244D61;
-      border-radius: 50%;
-      padding: 0.5rem;
-      width: 35px;
-      height: 35px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-    }
+    text-decoration: none;
+    color: #ec8aea;
+    border: 2px solid #ec8aea;
+    border-radius: 50%;
+    padding: 0.5rem;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
 
-    .social a:hover {
-      background-color: #244D61;
-      color: #fff;
-    }
+.social a:hover {
+    background-color: #ec8aea;
+    color: #fff;
+}
 
-    .button {
-      background-color: #244D61;
-      color: white;
-      padding: 0.8rem 2rem;
-      border: none;
-      border-radius: 30px;
-      font-size: 1rem;
-      text-transform: uppercase;
-      font-weight: 600;
-      letter-spacing: 1px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .button:hover {
-      background-color: #f76c6c;
-    }
+.button {
+    background-color: #ec8aea;
+    color: white;
+    padding: 15px 35px;
+    border: 1px solid #ec8aea;
+    border-radius: 30px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 15px;
+}
+button.button:hover {
+    background-color: inherit;
+}
 
     section.projects {
-      margin-top: 4rem;
+      margin-top: 2rem;
       width: 100%;
     }
 
     .projects h2 {
       text-align: center;
       margin-bottom: 2rem;
-      color: #244D61;
+      color: #ec8aea;
+      font-size: 34px;
     }
 
     .project-grid {
@@ -158,14 +166,63 @@
     .project-card {
       background: white;
       border-radius: 12px;
-      padding: 1rem;
+      padding: 30px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       transition: transform 0.3s;
     }
+    .project-card h3 {
+    font-size: 26px;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    font-weight: 600;
+}
 
     .project-card:hover {
       transform: translateY(-5px);
     }
+
+    .skills {
+    margin-top: 4rem;
+    text-align: center;
+    }
+
+    .skills h2 {
+        text-align: center;
+      margin-bottom: 2rem;
+      color: #ec8aea;
+      font-size: 34px;
+    }
+
+    .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    }
+
+    .skill {
+    background: white;
+    padding: 0.8rem 1.2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    color: #244D61;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.3s ease;
+    }
+
+    .skill i {
+    font-size: 1.2rem;
+    }
+
+    .skill:hover {
+    transform: translateY(-4px);
+    background-color: #f0f0f0;
+    }
+
 
     footer {
       margin-top: 4rem;
@@ -183,50 +240,67 @@
 </head>
 
 <body>
-  <header>
-    <div class="logo">Mitul Patel</div>
-    <nav>
-      <a href="#" target="_blank">LinkedIn</a>
-      <a href="#" target="_blank">Github</a>
-      <a href="#" target="_blank">Twitter</a>
-      <a href="tel:9599922940">Call</a>
-      <a href="mailto:patelmitul746@gmail.com">Email</a>
-    </nav>
-  </header>
-
-  <main>
-    <img src="img/minal1.png" alt="Mitul" class="profile-img"/>
-    <span class="title">Web Designer</span>
-    <h1>Hello, I'm Mitul</h1>
-    <div class="about">
-      <p>I’m a creative and detail-oriented Web Designer with 4+ years of experience building responsive, user-friendly websites. Skilled in HTML, CSS, JS, Bootstrap, jQuery, WordPress, and Shopify. I craft sleek interfaces and robust solutions with a deep focus on user experience and code quality.</p>
-      <p>I'm driven by curiosity and thrive in collaborative environments. Whether it's a new trend in design or a fresh challenge in code, I'm always eager to learn, grow, and deliver my best work with passion and precision.</p>
-    </div>
-    <div class="social">
-      <a href="#" target="_blank">in</a>
-      <a href="#" target="_blank">GH</a>
-      <a href="#" target="_blank">TW</a>
-    </div>
-    <a href="Mitul_Resume.pdf" target="_blank"><button class="button">Download Resume</button></a>
-  </main>
-
-  <section class="projects">
-    <h2>Projects</h2>
-    <div class="project-grid">
-      <!-- Placeholder: You'll send me project info for this -->
-      <div class="project-card">
-        <h3>Project Title</h3>
-        <p>Short description of the project goes here. We'll update this with real content.</p>
+    <header>
+      <div class="logo">Mitul Patel</div>
+      <nav>
+        <a href="#" target="_blank">LinkedIn</a>
+        <a href="#" target="_blank">Github</a>
+        <a href="#" target="_blank">Twitter</a>
+        <a href="tel:9599922940">Call</a>
+        <a href="mailto:patelmitul746@gmail.com">Email</a>
+      </nav>
+    </header>
+  
+    <main>
+      <img src="img/minal1.png" alt="Mitul" class="profile-img"/>
+      <span class="title">Web Designer</span>
+      <h1>Hello, I'm Mitul</h1>
+      <div class="about">
+        <p>I’m a creative and detail-oriented Web Designer with 4+ years of experience building responsive, user-friendly websites. Skilled in HTML, CSS, JS, Bootstrap, jQuery, WordPress, and Shopify, as well as basic
+            Photoshop and Illustrator. I craft sleek interfaces and robust solutions with a deep focus on user experience and code quality.</p>
+        <p>I'm driven by curiosity and thrive in collaborative environments. Whether it's a new trend in design or a fresh challenge in code, I'm always eager to learn, grow, and deliver my best work with passion and precision.</p>
       </div>
-      <div class="project-card">
-        <h3>Another Project</h3>
-        <p>Highlights of another project Mitul worked on. Screenshot or live link can be added.</p>
+      <div class="social">
+        <a href="#" target="_blank">in</a>
+        <a href="#" target="_blank">GH</a>
+        <a href="#" target="_blank">TW</a>
       </div>
-    </div>
-  </section>
+      <a href="Mitul_Resume.pdf" target="_blank"><button class="button">Download Resume</button></a>
+    </main>
+  
+    <section class="projects">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <!-- Placeholder: You'll send me project info for this -->
+        <div class="project-card">
+          <h3>Project Title</h3>
+          <p>Short description of the project goes here. We'll update this with real content.</p>
+        </div>
+        <div class="project-card">
+          <h3>Another Project</h3>
+          <p>Highlights of another project Mitul worked on. Screenshot or live link can be added.</p>
+        </div>
+      </div>
+    </section>
 
-  <footer>
-    &copy; 2025 Mitul Patel. All Rights Reserved.
-  </footer>
-</body>
-</html>
+    <section class="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <div class="skill"><i class="fab fa-html5"></i> HTML / HTML5</div>
+          <div class="skill"><i class="fab fa-css3-alt"></i> CSS / CSS3</div>
+          <div class="skill"><i class="fab fa-js"></i> JavaScript</div>
+          <div class="skill"><i class="fab fa-bootstrap"></i> Bootstrap</div>
+          <div class="skill"><i class="fab fa-jquery"></i> jQuery</div>
+          <div class="skill"><i class="fab fa-wordpress"></i> WordPress</div>
+          <div class="skill"><i class="fab fa-shopify"></i> Shopify</div>
+          <div class="skill"><i class="fas fa-image"></i> Photoshop</div>
+          <div class="skill"><i class="fas fa-pencil-alt"></i> Illustrator</div>
+        </div>
+    </section>      
+  
+    <footer>
+      &copy; 2025 Mitul Patel. All Rights Reserved.
+    </footer>
+  </body>
+  </html>
+  
