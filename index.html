@@ -4,17 +4,33 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mitul Patel | Portfolio</title>
+  <link rel="shortcut icon" href="icons/favicon.svg" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-a..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style> 
     * {margin: 0; padding: 0; box-sizing: border-box;} 
-    body {font-family: 'Poppins', sans-serif; max-height: 100vh; background-color: rgb(25 6 41); background-repeat: no-repeat; height: 100%; background-position: center; background-size: cover;}
+    body {font-family: 'Poppins', sans-serif; background-color: rgb(25 6 41); color: white;}
+
+    /* Header */
     header {display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 10%; background-color: white; box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;}
     .logo {font-size: 1.5rem; font-weight: 700; color: #1b0527;}
-    nav a {color: #1b0527; text-decoration: none; font-size: .97rem; font-weight: 600; letter-spacing: .7px; padding: 1rem; padding: 0.4rem 1rem; transition: all 0.3s ease !important;}
+    nav a {color: #1b0527; text-decoration: none; font-size: .97rem; font-weight: 600; letter-spacing: .7px; padding: 0.4rem 1rem; transition: all 0.3s ease !important;}
     nav a:hover {background-color: #9565c1; color: #fff; border-radius: 100px;}
+
+    /* Banner */
+    .animation-container {position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden;}
+    .portfolio-main {position: relative; z-index: 1;}
     main {padding: 4rem 10% 2rem; display: flex; flex-direction: column; align-items: center; text-align: center;}
-    .profile-img {border-radius: 50%; width: 150px; height: 150px; object-fit: cover; margin-bottom: 1rem; border: 4px solid #9565c1;}
+
+    /* Portfolio */
+    .profile-img {border-radius: 50%; width: 180px; height: 180px; object-fit: cover; border: 5px solid #9565c1; box-shadow: 0 8px 20px rgba(149, 101, 193, 0.3); position: relative; z-index: 1; display: block;}
+    .profile-img:hover {transform: scale(1.03); box-shadow: 0 10px 25px rgba(149, 101, 193, 0.4);}
+    .profile-img-container {position: relative; display: inline-block; margin-bottom: 2rem;}
+    .profile-img-container::before {content: ''; position: absolute; width: calc(100% + 20px); height: calc(100% + 20px); border-radius: 50%; border: 2px dashed rgba(149, 101, 193, 0.4); top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 0; animation: rotate 20s linear infinite;}
+    @keyframes rotate {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
     h1 {font-size: 2.5rem; color: #9565c1; margin-bottom: 0.5rem;}
     .about p {color: #fff; font-weight: 300;}
     .about p:first-of-type {margin-bottom: 20px;}
@@ -23,117 +39,245 @@
     .social {display: flex; gap: 1rem; justify-content: center; margin: 2rem 0;}
     .social a {text-decoration: none; color: #9565c1; border: 2px solid #9565c1; border-radius: 50%; padding: 0.5rem; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;}
     .social a:hover {background-color: #9565c1; color: #fff;}
-    .button {background-color: #9565c1; color: white; padding: 15px 35px; border: 1px solid #9565c1; border-radius: 30px; font-size: 1rem; text-transform: uppercase; font-weight: 500; letter-spacing: 1px; cursor: pointer; transition: background 0.3s ease; font-size: 15px;}
+    .button {background-color: #9565c1; text-decoration: none; color: white; padding: 15px 35px; border: 1px solid #9565c1; border-radius: 30px; font-size: 1rem; text-transform: uppercase; font-weight: 500; letter-spacing: 1px; cursor: pointer; transition: background 0.3s ease; font-size: 15px;}
     button.button:hover {background-color: inherit;}
+
+    /* Projects */
     section.projects {margin-top: 2rem; width: 100%;}
     .projects h2 {text-align: center; margin-bottom: 2rem; color: #9565c1; font-size: 34px;}
     .project-grid {display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; padding: 0 5%;}
-    .project-card {background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s;}
+    .project-card {display: flex; flex-direction: column; justify-content: space-between; color: #000; background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); transition: transform 0.3s;}
     .project-card h3 {font-size: 26px; margin-bottom: 15px; line-height: 1.4; font-weight: 600;}
-    .project-card p {margin-bottom: 20px;}
-    .project-card a {
-    color: #9565c1;
-    text-decoration: none;
-    transition: all 0.3s ease;}
+    .project-card p {flex-grow: 1;}
+    .project-card a {color: #9565c1; text-decoration: none; transition: all 0.3s ease;}
     .project-card a:hover {color: #1b0527;}
     .project-card:hover {transform: translateY(-5px);}
-    .skills {margin-top: 4rem; text-align: center;}
+    .view-project a {background-color: #9565c1; text-decoration: none; color: white; padding: 15px 35px; border: 1px solid #9565c1; border-radius: 30px; font-size: 15px; text-transform: uppercase; font-weight: 500; letter-spacing: 1px; cursor: pointer; transition: background 0.3s ease;}
+    .view-project {margin-top: 20px; display: flex; justify-content: left;}
+
+    /* Skills */
+    .skills {margin-top: 4rem; text-align: center; width: 100%; padding: 0 10%;}
     .skills h2 {text-align: center; margin-bottom: 2rem; color: #9565c1; font-size: 34px;}
-    .skills-grid {display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem;}
-    .skill {background: white; padding: 0.8rem 1.2rem; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); color: #9565c1; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem; transition: transform 0.3s ease;}
-    .skill i {font-size: 1.2rem;}
-    .skill:hover {transform: translateY(-4px); background-color: #f0f0f0;} 
-    footer {margin-top: 4rem; padding: 1rem; text-align: center; font-size: 0.9rem; color: #999;}
+    .skills-container {display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem;}
+    .skill-category {background: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 1.5rem; transition: all 0.3s ease; border: 1px solid rgba(149, 101, 193, 0.3);}
+    .skill-category:hover {transform: translateY(-5px); background: rgba(255, 255, 255, 0.15); box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);}
+    .skill-category h3 {color: #9565c1; margin-bottom: 1rem; font-size: 1.1rem; font-weight: 600; text-align: left; border-bottom: 1px solid rgba(149, 101, 193, 0.3); padding-bottom: 0.5rem;}
+    .skill-items {display: flex; flex-direction: column; gap: 0.8rem; text-align: left;}
+    .skill-item {color: #fff; font-weight: 300; font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem;}
+    .skill-item img {width: 20px; height: 20px; object-fit: contain; filter: invert(48%) sepia(79%) saturate(576%) hue-rotate(218deg) brightness(89%) contrast(83%);}
+
+    /* Footer */
+    footer {border-top: 1px solid #fff; margin-top: 4rem; padding: 1rem; text-align: center; font-size: 0.9rem; color: #999;}
+
     @media (max-width: 768px) {
       h1 {font-size: 2rem;}
       .about {padding: 0 1rem;}
+      .skills-container {grid-template-columns: repeat(2, 1fr);}
+    }
+    @media (max-width: 992px) {
+      .project-grid {grid-template-columns: repeat(2, 1fr);}
+    }
+    @media (max-width: 576px) {
+      .project-grid {grid-template-columns: 1fr;}
+    }
+    @media (max-width: 480px) {
+      .skills-container {grid-template-columns: 1fr;}
     }
   </style>
 </head>
 
 <body>
+    <div class="animation-container" id="animation-container"></div>
+  
     <header>
       <div class="logo">Mitul Patel</div>
       <nav>
         <a href="#" target="_blank">LinkedIn</a>
         <a href="#" target="_blank">Github</a>
-        <a href="#" target="_blank">Twitter</a>
         <a href="tel:9599922940">Call</a>
         <a href="mailto:patelmitul746@gmail.com">Email</a>
       </nav>
     </header>
   
-    <main>
-      <img src="img/minal1.png" alt="Mitul" class="profile-img"/>
-      <span class="title">Web Designer</span>
-      <h1>Hello, I'm Mitul</h1>
-      <div class="about">
-        <p>I’m a creative and detail-oriented Web Designer with 4+ years of experience building responsive, user-friendly websites. Skilled in HTML, CSS, JS, Bootstrap, jQuery, WordPress, and Shopify, as well as basic
-            Photoshop and Illustrator. I craft sleek interfaces and robust solutions with a deep focus on user experience and code quality.</p>
-        <p>I'm driven by curiosity and thrive in collaborative environments. Whether it's a new trend in design or a fresh challenge in code, I'm always eager to learn, grow, and deliver my best work with passion and precision.</p>
-      </div>
-      <div class="social">
-        <a href="#" target="_blank">in</a>
-        <a href="#" target="_blank">GH</a>
-        <a href="#" target="_blank">TW</a>
-      </div>
-      <a href="Mitul_Resume.pdf" target="_blank"><button class="button">Download Resume</button></a>
-    </main>
-  
-    <section class="projects">
-      <h2>Projects</h2>
-      <div class="project-grid">
-        <div class="project-card">
-          <h3>Conceptual Construction Corp</h3>
-          <p>Short description of the project goes here. We'll update this with real content.</p>
-          <a href="https://conceptualconstructionny.com/">View Website</a>
+    <div class="portfolio-main">
+      <main>
+        <div class="profile-img-container">
+          <img src="icons/profile-photo.jpg" alt="Profile photo of Mitul Patel, Web Designer" class="profile-img"/>
         </div>
-        <div class="project-card">
-          <h3>ADS Care</h3>
-          <p>Highlights of another project Mitul worked on. Screenshot or live link can be added.</p>
-          <a href="https://adscare.com.au/">View Website</a>
+        <span class="title">Web Designer</span>
+        <h1>Hello, I'm Mitul</h1>
+        <div class="about">
+          <p>I'm a creative and detail-oriented Web Designer with 4+ years of experience building responsive, user-friendly websites. Skilled in HTML, CSS, JS, Bootstrap, jQuery, WordPress, and Shopify, as well as basic
+              Photoshop and Illustrator. I craft sleek interfaces and robust solutions with a deep focus on user experience and code quality.</p>
+          <p>I'm driven by curiosity and thrive in collaborative environments. Whether it's a new trend in design or a fresh challenge in code, I'm always eager to learn, grow, and deliver my best work with passion and precision.</p>
         </div>
-        <div class="project-card">
-          <h3>Michael Laps</h3>
-          <p>Short description of the project goes here. We'll update this with real content.</p>
-          <a href="https://michaellaps.com/">View Website</a>
+        <div class="social">
+          <a href="#" target="_blank">in</a>
+          <a href="#" target="_blank">GH</a>
+          <a href="#" target="_blank">TW</a>
         </div>
-        <div class="project-card">
-          <h3>Lady K Hair Artistry</h3>
-          <p>Highlights of another project Mitul worked on. Screenshot or live link can be added.</p>
-          <a href="https://ladykhairartistry.com/">View Website</a>
+        <a href="Mitul_Resume.pdf" class="button" target="_blank">Download Resume</a>
+      </main>
+    
+      <section class="projects">
+        <h2>Projects</h2>
+        <div class="project-grid">
+          <div class="project-card">
+            <h3>Conceptual Construction Corp</h3>
+            <p>A New York City-based remodeling contractor specializing in residential and commercial renovations. With over 25 years of experience, they offer services ranging from kitchen and bathroom remodels to lobby and mixed-use space transformations, focusing on personalized design and quality craftsmanship.</p>
+            <div class="view-project"><a href="https://conceptualconstructionny.com/">View Website</a></div>
+          </div>
+          <div class="project-card">
+            <h3>ADS Care</h3>
+            <p>An Australian, family-oriented organization providing in-home care services for the elderly and adults living with disabilities or illnesses. ADS Care emphasizes a person-centered approach, aiming to help individuals live independently with dignity and comfort. </p>
+            <div class="view-project"><a href="https://adscare.com.au/">View Website</a></div>
+          </div>
+          <div class="project-card">
+            <h3>Michael Laps</h3>
+            <p>A growth advisory service led by Michael Laps, offering strategic guidance for companies aiming to scale. Leveraging over 15 years of experience in marketing and operations, Michael assists businesses in developing effective digital strategies and internal systems to facilitate growth.</p>
+            <div class="view-project"><a href="https://michaellaps.com/">View Website</a></div>
+          </div>
+          <div class="project-card">
+            <h3>Lady K Hair Artistry</h3>
+            <p>A luxury hair salon located in Bronte, Sydney, specializing in tailored hair coloring and cutting services. They use top-tier, sustainable, and vegan-friendly products to provide personalized hair care experiences.</p>
+            <div class="view-project"><a href="https://ladykhairartistry.com/">View Website</a></div>
+          </div>
+          <div class="project-card">
+            <h3>InSite Marketing</h3>
+            <p>A marketing firm based in Westchester, NY, dedicated to helping small business owners grow their marketing and sales efforts. They offer flexible, outsourced marketing services, including web design, SEO, PPC, email marketing, CRM, and marketing automation.</p>
+            <div class="view-project"><a href="https://insitemarketing.com/">View Website</a></div>
+          </div>
+          <div class="project-card">
+            <h3>CL Compensation Lawyers</h3>
+            <p>An Australian law firm specializing in personal injury compensation claims. Operating on a 'No Win No Fee' basis, they offer expert legal representation in areas such as motor vehicle accidents, medical negligence, and workers' compensation, boasting a 95% success rate.</p>
+            <div class="view-project"><a href="https://clcomplawyers.com.au/">View Website</a></div>
+          </div>
         </div>
-        <div class="project-card">
-          <h3>InSite Marketing</h3>
-          <p>Short description of the project goes here. We'll update this with real content.</p>
-          <a href="https://insitemarketing.com/">View Website</a>
-        </div>
-        <div class="project-card">
-          <h3>CL Compensation Lawyers</h3>
-          <p>Highlights of another project Mitul worked on. Screenshot or live link can be added.</p>
-          <a href="https://clcomplawyers.com.au/">View Website</a>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="skills">
+      <section class="skills">
         <h2>Skills</h2>
-        <div class="skills-grid">
-          <div class="skill"><i class="fab fa-html5"></i> HTML / HTML5</div>
-          <div class="skill"><i class="fab fa-css3-alt"></i> CSS / CSS3</div>
-          <div class="skill"><i class="fab fa-js"></i> JavaScript</div>
-          <div class="skill"><i class="fab fa-bootstrap"></i> Bootstrap</div>
-          <div class="skill"><i class="fab fa-jquery"></i> jQuery</div>
-          <div class="skill"><i class="fab fa-wordpress"></i> WordPress</div>
-          <div class="skill"><i class="fab fa-shopify"></i> Shopify</div>
-          <div class="skill"><i class="fas fa-image"></i> Photoshop</div>
-          <div class="skill"><i class="fas fa-pencil-alt"></i> Illustrator</div>
+        <div class="skills-container">
+          <div class="skill-category">
+            <h3>Frontend</h3>
+            <div class="skill-items">
+              <div class="skill-item"><img src="icons/html5_icon.svg" alt="HTML5"> HTML / HTML5</div>
+              <div class="skill-item"><img src="icons/css3_icon.svg" alt="CSS3"> CSS / CSS3</div>
+              <div class="skill-item"><img src="icons/javascript_icon.svg" alt="JavaScript"> JavaScript</div>
+              <div class="skill-item"><img src="icons/bootstrap_icon.svg" alt="Bootstrap"> Bootstrap</div>
+              <div class="skill-item"><img src="icons/jquery_icon.svg" alt="jQuery"> jQuery</div>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h3>CMS & E-commerce</h3>
+            <div class="skill-items">
+              <div class="skill-item"><img src="icons/wordpress_icon.svg" alt="WordPress"> WordPress</div>
+              <div class="skill-item"><img src="icons/shopify_icon.svg" alt="Shopify"> Shopify</div>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h3>Design Tools</h3>
+            <div class="skill-items">
+              <div class="skill-item"><img src="icons/photoshop_icon.svg" alt="Photoshop"> Photoshop</div>
+              <div class="skill-item"><img src="icons/illustrator_icon.svg" alt="Illustrator"> Illustrator</div>
+            </div>
+          </div>
         </div>
-    </section>      
-  
+      </section>    
+    </div>
+    
     <footer>
-      &copy; 2025 Mitul Patel. All Rights Reserved.
+      © 2025 Mitul Patel. All Rights Reserved.
     </footer>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const container = document.getElementById('animation-container');
+        const colors = ['#9565c1', '#44b1ff', '#fd4747'];
+        
+        // Create canvas
+        const canvas = document.createElement('canvas');
+        container.appendChild(canvas);
+        const ctx = canvas.getContext('2d');
+        
+        // Set canvas size
+        canvas.width = container.offsetWidth;
+        canvas.height = container.offsetHeight;
+        
+        // Particles array
+        let particles = [];
+        const particleCount = Math.floor(canvas.width * canvas.height / 10000);
+        
+        // Particle constructor
+        function Particle() {
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height;
+          this.vx = Math.random() * 2 - 1;
+          this.vy = Math.random() * 2 - 1;
+          this.radius = Math.random() * 1.5 + 0.5;
+          this.color = colors[Math.floor(Math.random() * colors.length)];
+          this.opacity = Math.random() * 0.6 + 0.1;
+        }
+        
+        // Initialize particles
+        for (let i = 0; i < particleCount; i++) {
+          particles.push(new Particle());
+        }
+        
+        // Animation loop
+        function animate() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          
+          // Update and draw particles
+          for (let i = 0; i < particles.length; i++) {
+            const p = particles[i];
+            
+            // Update position
+            p.x += p.vx;
+            p.y += p.vy;
+            
+            // Bounce off edges
+            if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+            if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+            
+            // Draw particle
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+            ctx.fillStyle = p.color;
+            ctx.globalAlpha = p.opacity;
+            ctx.fill();
+            
+            // Draw connections
+            for (let j = i + 1; j < particles.length; j++) {
+              const p2 = particles[j];
+              const distance = Math.sqrt(Math.pow(p.x - p2.x, 2) + Math.pow(p.y - p2.y, 2));
+              
+              if (distance < 100) {
+                ctx.beginPath();
+                ctx.moveTo(p.x, p.y);
+                ctx.lineTo(p2.x, p2.y);
+                ctx.strokeStyle = p.color;
+                ctx.globalAlpha = (1 - distance / 100) * 0.2;
+                ctx.lineWidth = 0.5;
+                ctx.stroke();
+              }
+            }
+          }
+          
+          requestAnimationFrame(animate);
+        }
+        
+        // Handle resize
+        window.addEventListener('resize', function() {
+          canvas.width = container.offsetWidth;
+          canvas.height = container.offsetHeight;
+        });
+        
+        // Start animation
+        animate();
+      });
+    </script>
   </body>
-  </html>
-  
+</html>
