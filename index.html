@@ -47,12 +47,14 @@
     section.projects {margin-top: 2rem; width: 100%;}
     .projects h2 {text-align: center; margin-bottom: 2rem; color: #9565c1; font-size: 34px;}
     .project-grid {display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; padding: 0 5%;}
-    .project-card {display: flex; flex-direction: column; justify-content: space-between; color: #000; background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); transition: transform 0.3s;}
-    .project-card h3 {font-size: 26px; margin-bottom: 15px; line-height: 1.4; font-weight: 600;}
+    .project-card {position: relative; display: flex; flex-direction: column; justify-content: space-between; color: #fff; background-color: white; background-size: cover; background-repeat: no-repeat; background-position: center top; border-radius: 12px; padding: 30px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); transition: transform 0.3s, background-position 3s ease; height: 100%; min-height: 450px; overflow: hidden; z-index: 0;}
+    .project-card::before {content: ""; position: absolute; top: 0; left: 0; height: 100%; width: 100%; background: rgb(58 14 101 / 60%); z-index: 1;}
+    .project-card * {position: relative; z-index: 2;}
+    .project-card:hover {transform: translateY(-5px); background-position: center bottom;}
+    .project-card h3 {font-size: 30px; margin-bottom: 15px; line-height: 1.4; font-weight: 600; text-align: center;}
     .project-card p {flex-grow: 1;}
     .project-card a {color: #9565c1; text-decoration: none; transition: all 0.3s ease;}
     .project-card a:hover {color: #1b0527;}
-    .project-card:hover {transform: translateY(-5px);}
     .view-project a {background-color: #9565c1; text-decoration: none; color: white; padding: 15px 35px; border: 1px solid #9565c1; border-radius: 30px; font-size: 15px; text-transform: uppercase; 
     font-weight: 500; letter-spacing: 1px; cursor: pointer; transition: all 0.3s ease;}
     .view-project {margin-top: 20px; display: flex; justify-content: left;}
@@ -144,35 +146,23 @@
       <section class="projects">
         <h2>Projects</h2>
         <div class="project-grid">
-          <div class="project-card">
+          <div class="project-card" style="background-image: url(images/Conceptual_Construction_Corp.png);">
             <h3>Conceptual Construction Corp</h3>
-            <p>A New York City-based remodeling contractor specializing in residential and commercial renovations. With over 25 years of experience, they offer services ranging from kitchen and bathroom remodels to lobby and mixed-use space transformations, focusing on personalized design and quality craftsmanship.</p>
-            <div class="view-project"><a href="https://conceptualconstructionny.com/">View Website</a></div>
           </div>
-          <div class="project-card">
+          <div class="project-card" style="background-image: url(images/ADS_Care.png);">
             <h3>ADS Care</h3>
-            <p>An Australian, family-oriented organization providing in-home care services for the elderly and adults living with disabilities or illnesses. ADS Care emphasizes a person-centered approach, aiming to help individuals live independently with dignity and comfort. </p>
-            <div class="view-project"><a href="https://adscare.com.au/">View Website</a></div>
           </div>
-          <div class="project-card">
+          <div class="project-card" style="background-image: url(images/Michael_Laps.png);">
             <h3>Michael Laps</h3>
-            <p>A growth advisory service led by Michael Laps, offering strategic guidance for companies aiming to scale. Leveraging over 15 years of experience in marketing and operations, Michael assists businesses in developing effective digital strategies and internal systems to facilitate growth.</p>
-            <div class="view-project"><a href="https://michaellaps.com/">View Website</a></div>
           </div>
-          <div class="project-card">
+          <div class="project-card" style="background-image: url(images/Lady_K_Hair_Artistry.png);">
             <h3>Lady K Hair Artistry</h3>
-            <p>A luxury hair salon located in Bronte, Sydney, specializing in tailored hair coloring and cutting services. They use top-tier, sustainable, and vegan-friendly products to provide personalized hair care experiences.</p>
-            <div class="view-project"><a href="https://ladykhairartistry.com/">View Website</a></div>
           </div>
-          <div class="project-card">
+          <div class="project-card" style="background-image: url(images/InSite_Marketing.png);">
             <h3>InSite Marketing</h3>
-            <p>A marketing firm based in Westchester, NY, dedicated to helping small business owners grow their marketing and sales efforts. They offer flexible, outsourced marketing services, including web design, SEO, PPC, email marketing, CRM, and marketing automation.</p>
-            <div class="view-project"><a href="https://insitemarketing.com/">View Website</a></div>
           </div>
-          <div class="project-card">
+          <div class="project-card" style="background-image: url(images/CL_Compensation_Lawyers.png);">
             <h3>CL Compensation Lawyers</h3>
-            <p>An Australian law firm specializing in personal injury compensation claims. Operating on a 'No Win No Fee' basis, they offer expert legal representation in areas such as motor vehicle accidents, medical negligence, and workers' compensation, boasting a 95% success rate.</p>
-            <div class="view-project"><a href="https://clcomplawyers.com.au/">View Website</a></div>
           </div>
         </div>
       </section>
