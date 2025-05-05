@@ -47,12 +47,13 @@ h1 {font-size: 2.5rem; color: #fff; margin-bottom: 0.5rem;}
 section.projects {margin-top: 2rem; width: 100%;}
 .projects h2 {text-align: center; margin-bottom: 3rem; color: #fff; font-size: 46px;}
 .project-grid {display: grid; grid-template-columns: repeat(3, 1fr); gap: 5rem 2rem;; padding: 0 5%;}
-.project-card {position: relative; display: flex; flex-direction: column; justify-content: space-between; color: #fff; background-color: white; background-size: cover; background-repeat: no-repeat; background-position: center top; border-radius: 12px; padding: 30px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); transition: transform 0.3s, background-position 3s ease; height: 100%; min-height: 450px; overflow: hidden; z-index: 0;}
+.project-card {position: relative; display: flex; flex-direction: column; justify-content: space-between; color: #fff; background-color: white; background-size: cover; background-repeat: no-repeat; background-position: center top; border-radius: 12px 12px 0 0; padding: 30px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); transition: transform 1s, background-position 3s ease; height: 100%; min-height: 450px; overflow: hidden; z-index: 0;}
 .project-card::before {content: ""; position: absolute; top: 0; left: 0; height: 100%; width: 100%; background: rgba(131, 6, 253, 0.2);}
 .project-card * {position: relative; z-index: 2;}
-.project-card:hover {transform: translateY(-5px); background-position: center bottom;}
-.project-item h3 {font-size: 30px; margin-bottom: 0; line-height: 1.4; font-weight: 600; text-align: center;}
-.project-item {display: flex; flex-direction: column; gap: 30px;}
+.project-card:hover {background-position: center bottom;}
+.project-item h3 {font-size: 28px; margin-bottom: 0; line-height: 1.4; font-weight: 600; text-align: center; width: 100%; background: #fff; color: #190629; padding: 15px; border-radius: 0 0 12px 12px; display: flex;
+justify-content: center; align-items: center;}
+.project-item {display: flex; flex-direction: column;}
 .project-card p {flex-grow: 1;}
 .project-card a {color: #9565c1; text-decoration: none; transition: all 0.3s ease;}
 .project-card a:hover {color: #1b0527;}
@@ -75,15 +76,26 @@ font-weight: 500; letter-spacing: 1px; cursor: pointer; transition: all 0.3s eas
 footer {border-top: 1px solid #fff; margin-top: 4rem; padding: 1rem; text-align: center; font-size: 0.9rem; color: #999;}
 
 @media (max-width: 1600px) {
-.project-item h3 {min-height: 70px;}
+.project-item h3 {min-height: 70px; font-size: 25px;}
+.project-card {min-height: 350px;}
+}
+
+@media (max-width: 1500px) {
+.project-item h3 {min-height: 90px; font-size: 25px;}
+.project-card {min-height: 330px;}
+}
+
+
+@media (max-width: 1439px) {
+.project-item h3 {min-height: 85px; font-size: 24px;}
 }
 
 @media (max-width: 1199px) {
-.project-item h3 {min-height: 60px;}
-.project-item h3 {font-size: 28px;}
+.project-item h3 {min-height: 80px; font-size: 22px;}
 .projects h2 {font-size: 40px;}
-.project-card {min-height: 300px;}
+.project-card {min-height: 240px;}
 .skills h2 {font-size: 40px;}
+
 }
 
 @media (max-width: 1023px) {
@@ -113,7 +125,7 @@ footer {margin-top: 2rem;}
 .project-grid {gap: 3rem 1.5rem;}
 header {padding: 10px 4%;}
 
-.project-item h3 {font-size: 24px; min-height: 50px;}
+.project-card {min-height: 260px;}
 
 }
 
@@ -125,8 +137,6 @@ header {padding: 10px 4%;}
 .project-grid {grid-template-columns: 1fr; margin-top: 1rem; gap: 2rem;}
 header {padding: 10px 4%; flex-direction: column; justify-content: center; gap: 10px;}
 .project-item h3 {min-height: auto;}
-.project-item {gap: 20px;}
-.project-item h3 {font-size: 22px;}
 .project-card {min-height: 250px;}
 }
 
@@ -224,8 +234,8 @@ header {padding: 10px 4%; flex-direction: column; justify-content: center; gap: 
             <div class="skill-items">
               <div class="skill-item"><img src="wordpress_icon.svg" alt="WordPress"> WordPress</div>
               <div class="skill-item"><img src="shopify_icon.svg" alt="Shopify"> Shopify</div>
-              <div class="skill-item"><img src="shopify_icon.svg" alt="Shopify"> Wix</div>
-              <div class="skill-item"><img src="shopify_icon.svg" alt="Shopify"> squarespace</div>
+              <div class="skill-item"><img src="wix_icon.svg" alt="Shopify"> Wix</div>
+              <div class="skill-item"><img src="squarespace_icon.svg" alt="Shopify"> Squarespace</div>
             </div>
           </div>
           
