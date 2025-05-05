@@ -8,105 +8,131 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-a..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style> 
-    * {margin: 0; padding: 0; box-sizing: border-box;} 
-    body {font-family: 'Poppins', sans-serif; background-color: rgb(25 6 41); color: white;}
+* {margin: 0; padding: 0; box-sizing: border-box;} 
+body {font-family: 'Poppins', sans-serif; background-color: rgb(25 6 41); color: white;}
 
-    /* Header */
-    header {display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 10%; background-color: white; box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;}
-    .logo {font-size: 1.5rem; font-weight: 700; color: #1b0527;}
-    nav a {color: #1b0527; text-decoration: none; font-size: .97rem; font-weight: 600; letter-spacing: .7px; padding: 0.4rem 1rem; transition: all 0.3s ease !important;}
-    nav a:hover {background-color: #9565c1; color: #fff; border-radius: 100px;}
+/* Header */
+header {display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 10%; background-color: white; box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;}
+.logo {font-size: 1.5rem; font-weight: 700; color: #1b0527;}
+nav a {color: #1b0527; text-decoration: none; font-size: .97rem; font-weight: 600; letter-spacing: .7px; padding: 0.4rem 1rem; transition: all 0.3s ease !important;}
+nav a:hover {background-color: #9565c1; color: #fff; border-radius: 100px;}
 
-    /* Banner */
-    .animation-container {position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden;}
-    .portfolio-main {position: relative; z-index: 1;}
-    main {padding: 4rem 10% 2rem; display: flex; flex-direction: column; align-items: center; text-align: center;}
+/* Banner */
+.animation-container {position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden;}
+.portfolio-main {position: relative; z-index: 1;}
+main {padding: 4rem 10% 2rem; display: flex; flex-direction: column; align-items: center; text-align: center;}
 
-    /* Portfolio */
-    .profile-img {border-radius: 50%; width: 150px; height: 150px; object-fit: cover; border: 5px solid #9565c1; box-shadow: 0 8px 20px rgba(149, 101, 193, 0.3); position: relative; z-index: 1; display: block;
-    transition: all 0.3s ease;}
-    .profile-img:hover {transform: scale(1.03); box-shadow: 0 10px 25px rgba(149, 101, 193, 0.4);}
-    .profile-img-container {position: relative; display: inline-block; margin-bottom: 2rem;}
-    .profile-img-container::before {content: ''; position: absolute; width: calc(100% + 20px); height: calc(100% + 20px); border-radius: 50%; border: 2px dashed rgba(149, 101, 193, 0.4); top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 0; animation: rotate 20s linear infinite;}
-    @keyframes rotate {
-      0% { transform: translate(-50%, -50%) rotate(0deg); }
-      100% { transform: translate(-50%, -50%) rotate(360deg); }
-    }
-    h1 {font-size: 2.5rem; color: #9565c1; margin-bottom: 0.5rem;}
-    .about p {color: #fff; font-weight: 300;}
-    .about p:first-of-type {margin-bottom: 20px;}
-    .title {font-size: 1.2rem; letter-spacing: 2px; text-transform: uppercase; background: linear-gradient(120deg, #9565c1 20.69%, #44b1ff 50.19%, #fd4747 79.69%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1rem; display: inline-block;}
-    .about {max-width: 900px; margin: 2rem auto; font-size: 1rem; color: #555;}
-    .social {display: flex; gap: 1rem; justify-content: center; margin: 2rem 0;}
-    .social a {text-decoration: none; color: #9565c1; border: 2px solid #9565c1; border-radius: 50%; padding: 0.5rem; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;}
-    .social a:hover {background-color: #9565c1; color: #fff;}
-    .button {background-color: #9565c1; text-decoration: none; color: white; padding: 15px 35px; border: 1px solid #9565c1; border-radius: 30px; font-size: 1rem; text-transform: uppercase; font-weight: 500; letter-spacing: 1px; cursor: pointer; transition: all 0.3s ease; font-size: 15px;}
-    .button:hover {background: #fff; color: #9565c1;}
+/* Portfolio */
+.profile-img {border-radius: 50%; width: 150px; height: 150px; object-fit: cover; border: 5px solid #9565c1; box-shadow: 0 8px 20px rgba(149, 101, 193, 0.3); position: relative; z-index: 1; display: block;
+transition: all 0.3s ease;}
+.profile-img:hover {transform: scale(1.03); box-shadow: 0 10px 25px rgba(149, 101, 193, 0.4);}
+.profile-img-container {position: relative; display: inline-block; margin-bottom: 2rem;}
+.profile-img-container::before {content: ''; position: absolute; width: calc(100% + 20px); height: calc(100% + 20px); border-radius: 50%; border: 2px dashed rgba(149, 101, 193, 0.4); top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 0; animation: rotate 20s linear infinite;}
+@keyframes rotate {
+0% { transform: translate(-50%, -50%) rotate(0deg); }
+100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+h1 {font-size: 2.5rem; color: #fff; margin-bottom: 0.5rem;}
+.about p {color: #fff; font-weight: 300;}
+.about p:first-of-type {margin-bottom: 20px;}
+.title {font-size: 1.2rem; letter-spacing: 2px; text-transform: uppercase; background: linear-gradient(120deg, #9565c1 20.69%, #44b1ff 50.19%, #fd4747 79.69%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1rem; display: inline-block;}
+.about {max-width: 900px; margin: 2rem auto; font-size: 1rem; color: #555;}
+.social {display: flex; gap: 1rem; justify-content: center; margin: 2rem 0;}
+.social a {text-decoration: none; color: #9565c1; border: 2px solid #9565c1; border-radius: 50%; padding: 0.5rem; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;}
+.social a:hover {background-color: #9565c1; color: #fff;}
+.button {background-color: #9565c1; text-decoration: none; color: white; padding: 15px 35px; border: 1px solid #9565c1; border-radius: 30px; font-size: 1rem; text-transform: uppercase; font-weight: 500; letter-spacing: 1px; cursor: pointer; transition: all 0.3s ease; font-size: 15px;}
+.button:hover {background: #fff; color: #9565c1;}
 
-    /* Projects */
-    section.projects {margin-top: 2rem; width: 100%;}
-    .projects h2 {text-align: center; margin-bottom: 2rem; color: #9565c1; font-size: 34px;}
-    .project-grid {display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; padding: 0 5%;}
-    .project-card {position: relative; display: flex; flex-direction: column; justify-content: space-between; color: #fff; background-color: white; background-size: cover; background-repeat: no-repeat; background-position: center top; border-radius: 12px; padding: 30px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); transition: transform 0.3s, background-position 3s ease; height: 100%; min-height: 450px; overflow: hidden; z-index: 0;}
-    .project-card::before {content: ""; position: absolute; top: 0; left: 0; height: 100%; width: 100%; background: rgb(58 14 101 / 60%); z-index: 1;}
-    .project-card * {position: relative; z-index: 2;}
-    .project-card:hover {transform: translateY(-5px); background-position: center bottom;}
-    .project-card h3 {font-size: 30px; margin-bottom: 15px; line-height: 1.4; font-weight: 600; text-align: center;}
-    .project-card p {flex-grow: 1;}
-    .project-card a {color: #9565c1; text-decoration: none; transition: all 0.3s ease;}
-    .project-card a:hover {color: #1b0527;}
-    .view-project a {background-color: #9565c1; text-decoration: none; color: white; padding: 15px 35px; border: 1px solid #9565c1; border-radius: 30px; font-size: 15px; text-transform: uppercase; 
-    font-weight: 500; letter-spacing: 1px; cursor: pointer; transition: all 0.3s ease;}
-    .view-project {margin-top: 20px; display: flex; justify-content: left;}
+/* Projects */
+section.projects {margin-top: 2rem; width: 100%;}
+.projects h2 {text-align: center; margin-bottom: 3rem; color: #fff; font-size: 46px;}
+.project-grid {display: grid; grid-template-columns: repeat(3, 1fr); gap: 5rem 2rem;; padding: 0 5%;}
+.project-card {position: relative; display: flex; flex-direction: column; justify-content: space-between; color: #fff; background-color: white; background-size: cover; background-repeat: no-repeat; background-position: center top; border-radius: 12px; padding: 30px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); transition: transform 0.3s, background-position 3s ease; height: 100%; min-height: 450px; overflow: hidden; z-index: 0;}
+.project-card::before {content: ""; position: absolute; top: 0; left: 0; height: 100%; width: 100%; background: rgba(131, 6, 253, 0.2);}
+.project-card * {position: relative; z-index: 2;}
+.project-card:hover {transform: translateY(-5px); background-position: center bottom;}
+.project-item h3 {font-size: 30px; margin-bottom: 0; line-height: 1.4; font-weight: 600; text-align: center;}
+.project-item {display: flex; flex-direction: column; gap: 30px;}
+.project-card p {flex-grow: 1;}
+.project-card a {color: #9565c1; text-decoration: none; transition: all 0.3s ease;}
+.project-card a:hover {color: #1b0527;}
+.view-project a {background-color: #9565c1; text-decoration: none; color: white; padding: 15px 35px; border: 1px solid #9565c1; border-radius: 30px; font-size: 15px; text-transform: uppercase; 
+font-weight: 500; letter-spacing: 1px; cursor: pointer; transition: all 0.3s ease;}
+.view-project {margin-top: 20px; display: flex; justify-content: left;}
 
-    /* Skills */
-    .skills {margin-top: 4rem; text-align: center; width: 100%; padding: 0 10%;}
-    .skills h2 {text-align: center; margin-bottom: 2rem; color: #9565c1; font-size: 34px;}
-    .skills-container {display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem;}
-    .skill-category {background: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 1.5rem; transition: all 0.3s ease; border: 1px solid rgba(149, 101, 193, 0.3);}
-    .skill-category:hover {transform: translateY(-5px); background: rgba(255, 255, 255, 0.15); box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);}
-    .skill-category h3 {color: #9565c1; margin-bottom: 1rem; font-size: 1.5rem; font-weight: 600; text-align: left; border-bottom: 1px solid rgba(149, 101, 193, 0.3); padding-bottom: 0.5rem;}
-    .skill-items {display: flex; flex-direction: column; gap: 0.8rem; text-align: left;}
-    .skill-item {color: #fff; font-weight: 300; font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem;}
-    .skill-item img {width: 20px; height: 20px; object-fit: contain; filter: invert(48%) sepia(79%) saturate(576%) hue-rotate(218deg) brightness(89%) contrast(83%);}
+/* Skills */
+.skills {margin-top: 4rem; text-align: center; width: 100%; padding: 0 10%;}
+.skills h2 {text-align: center; margin-bottom: 3rem; color: #fff; font-size: 46px;}
+.skills-container {display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem;}
+.skill-category {background: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 1.5rem; transition: all 0.3s ease; border: 1px solid rgba(149, 101, 193, 0.3);}
+.skill-category:hover {transform: translateY(-5px); background: rgba(255, 255, 255, 0.15); box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);}
+.skill-category h3 {color: #9565c1; margin-bottom: 1rem; font-size: 1.1rem; font-weight: 600; text-align: left; border-bottom: 1px solid rgba(149, 101, 193, 0.3); padding-bottom: 0.5rem;}
+.skill-items {display: flex; flex-direction: column; gap: 0.8rem; text-align: left;}
+.skill-item {color: #fff; font-weight: 300; font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem;}
+.skill-item img {width: 20px; height: 20px; object-fit: contain; filter: invert(48%) sepia(79%) saturate(576%) hue-rotate(218deg) brightness(89%) contrast(83%);}
 
-    /* Footer */
-    footer {border-top: 1px solid #fff; margin-top: 4rem; padding: 1rem; text-align: center; font-size: 0.9rem; color: #999;}
+/* Footer */
+footer {border-top: 1px solid #fff; margin-top: 4rem; padding: 1rem; text-align: center; font-size: 0.9rem; color: #999;}
 
-    @media (max-width: 768px) {
-      h1 {font-size: 2rem;}
-      .about {padding: 0 1rem;}
-      .skills-container {grid-template-columns: repeat(2, 1fr);} 
+@media (max-width: 1600px) {
+.project-item h3 {min-height: 70px;}
+}
 
-      nav a {padding: 0.4rem 0.5rem;}
-      .profile-img {width: 100px; height: 100px;}
-      main {padding: 3rem 5% 2rem;}
-      .skills {margin-top: 2rem; padding: 0 5%;}
-      .skills h2 {margin-bottom: 0rem;}
-      .view-project a {padding: 10px 25px; font-size: 14px;}
-      .button {padding: 10px 25px; font-size: 14px;}
-      .projects h2 {margin-bottom: 1.5rem;}
-      section.projects {margin-top: 0rem;}
-      .about {margin: 0.5rem auto;}
-      .project-card {padding: 25px;}
-      .skill-category {padding: 1.3rem;}
-      footer {margin-top: 2rem;}
-      .social a {width: 40px; height: 40px; font-size: 15px;}
-      .project-card h3 {font-size: 24px;}
-      .project-grid {gap: 1.5rem;}
-      header {padding: 10px 4%;}
-    }
-    @media (max-width: 992px) {
-      .project-grid {grid-template-columns: repeat(2, 1fr);}
-    }
-    @media (max-width: 576px) {
-      .project-grid {grid-template-columns: 1fr; margin-top: 1rem; gap: 1.3rem;}
-      header {padding: 10px 4%; flex-direction: column; justify-content: center; gap: 10px;}
-      
-    }
-    @media (max-width: 480px) {
-      .skills-container {grid-template-columns: 1fr; margin-top: 1rem;}
-    }
+@media (max-width: 1199px) {
+.project-item h3 {min-height: 60px;}
+.project-item h3 {font-size: 28px;}
+.projects h2 {font-size: 40px;}
+.project-card {min-height: 300px;}
+.skills h2 {font-size: 40px;}
+}
+
+@media (max-width: 1023px) {
+.project-grid {gap: 4rem 1.5rem;}
+}
+
+@media (max-width: 768px) {
+h1 {font-size: 2rem;}
+.about {padding: 0 1rem;}
+.skills-container {grid-template-columns: repeat(2, 1fr);} 
+
+nav a {padding: 0.4rem 0.5rem;}
+.profile-img {width: 100px; height: 100px;}
+main {padding: 3rem 5% 2rem;}
+.skills {margin-top: 2rem; padding: 0 5%;}
+.skills h2 {margin-bottom: 0rem; font-size: 34px;}
+.view-project a {padding: 10px 25px; font-size: 14px;}
+.button {padding: 10px 25px; font-size: 14px;}
+.projects h2 {margin-bottom: 1.5rem; font-size: 34px;}
+section.projects {margin-top: 0rem;}
+.about {margin: 0.5rem auto;}
+.project-card {padding: 25px;}
+.skill-category {padding: 1.3rem;}
+footer {margin-top: 2rem;}
+.social a {width: 40px; height: 40px; font-size: 15px;}
+.project-card h3 {font-size: 24px;}
+.project-grid {gap: 3rem 1.5rem;}
+header {padding: 10px 4%;}
+
+.project-item h3 {font-size: 24px; min-height: 50px;}
+
+}
+
+@media (max-width: 992px) {
+.project-grid {grid-template-columns: repeat(2, 1fr);}
+}
+
+@media (max-width: 576px) {
+.project-grid {grid-template-columns: 1fr; margin-top: 1rem; gap: 2rem;}
+header {padding: 10px 4%; flex-direction: column; justify-content: center; gap: 10px;}
+.project-item h3 {min-height: auto;}
+.project-item {gap: 20px;}
+.project-item h3 {font-size: 22px;}
+.project-card {min-height: 250px;}
+}
+
+@media (max-width: 480px) {
+.skills-container {grid-template-columns: 1fr; margin-top: 1rem;}
+}
   </style>
 </head>
 
@@ -176,21 +202,6 @@
             </div>
             <h3>CL Compensation Lawyers</h3>
           </div>
-          <div class="project-item">
-            <div class="project-card" style="background-image: url(Top_Gear_Inspections.png);">
-            </div>a
-            <h3>Top Gear Inspections</h3>
-          </div>
-          <div class="project-item">
-            <div class="project-card" style="background-image: url(Plexus_PT.png);">
-            </div>
-            <h3>Plexus PT</h3>
-          </div>
-          <div class="project-item">
-            <div class="project-card" style="background-image: url(Stacey_Elctrical.png);">
-            </div>
-            <h3>Stacey Electrical</h3>
-          </div>
         </div>
       </section>
 
@@ -213,6 +224,8 @@
             <div class="skill-items">
               <div class="skill-item"><img src="wordpress_icon.svg" alt="WordPress"> WordPress</div>
               <div class="skill-item"><img src="shopify_icon.svg" alt="Shopify"> Shopify</div>
+              <div class="skill-item"><img src="shopify_icon.svg" alt="Shopify"> Wix</div>
+              <div class="skill-item"><img src="shopify_icon.svg" alt="Shopify"> squarespace</div>
             </div>
           </div>
           
