@@ -23,7 +23,8 @@
     main {padding: 4rem 10% 2rem; display: flex; flex-direction: column; align-items: center; text-align: center;}
 
     /* Portfolio */
-    .profile-img {border-radius: 50%; width: 180px; height: 180px; object-fit: cover; border: 5px solid #9565c1; box-shadow: 0 8px 20px rgba(149, 101, 193, 0.3); position: relative; z-index: 1; display: block;}
+    .profile-img {border-radius: 50%; width: 150px; height: 150px; object-fit: cover; border: 5px solid #9565c1; box-shadow: 0 8px 20px rgba(149, 101, 193, 0.3); position: relative; z-index: 1; display: block;
+    transition: all 0.3s ease;}
     .profile-img:hover {transform: scale(1.03); box-shadow: 0 10px 25px rgba(149, 101, 193, 0.4);}
     .profile-img-container {position: relative; display: inline-block; margin-bottom: 2rem;}
     .profile-img-container::before {content: ''; position: absolute; width: calc(100% + 20px); height: calc(100% + 20px); border-radius: 50%; border: 2px dashed rgba(149, 101, 193, 0.4); top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 0; animation: rotate 20s linear infinite;}
@@ -39,8 +40,8 @@
     .social {display: flex; gap: 1rem; justify-content: center; margin: 2rem 0;}
     .social a {text-decoration: none; color: #9565c1; border: 2px solid #9565c1; border-radius: 50%; padding: 0.5rem; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;}
     .social a:hover {background-color: #9565c1; color: #fff;}
-    .button {background-color: #9565c1; text-decoration: none; color: white; padding: 15px 35px; border: 1px solid #9565c1; border-radius: 30px; font-size: 1rem; text-transform: uppercase; font-weight: 500; letter-spacing: 1px; cursor: pointer; transition: background 0.3s ease; font-size: 15px;}
-    button.button:hover {background-color: inherit;}
+    .button {background-color: #9565c1; text-decoration: none; color: white; padding: 15px 35px; border: 1px solid #9565c1; border-radius: 30px; font-size: 1rem; text-transform: uppercase; font-weight: 500; letter-spacing: 1px; cursor: pointer; transition: all 0.3s ease; font-size: 15px;}
+    .button:hover {background: #fff; color: #9565c1;}
 
     /* Projects */
     section.projects {margin-top: 2rem; width: 100%;}
@@ -52,7 +53,8 @@
     .project-card a {color: #9565c1; text-decoration: none; transition: all 0.3s ease;}
     .project-card a:hover {color: #1b0527;}
     .project-card:hover {transform: translateY(-5px);}
-    .view-project a {background-color: #9565c1; text-decoration: none; color: white; padding: 15px 35px; border: 1px solid #9565c1; border-radius: 30px; font-size: 15px; text-transform: uppercase; font-weight: 500; letter-spacing: 1px; cursor: pointer; transition: background 0.3s ease;}
+    .view-project a {background-color: #9565c1; text-decoration: none; color: white; padding: 15px 35px; border: 1px solid #9565c1; border-radius: 30px; font-size: 15px; text-transform: uppercase; 
+    font-weight: 500; letter-spacing: 1px; cursor: pointer; transition: all 0.3s ease;}
     .view-project {margin-top: 20px; display: flex; justify-content: left;}
 
     /* Skills */
@@ -72,16 +74,36 @@
     @media (max-width: 768px) {
       h1 {font-size: 2rem;}
       .about {padding: 0 1rem;}
-      .skills-container {grid-template-columns: repeat(2, 1fr);}
+      .skills-container {grid-template-columns: repeat(2, 1fr);} 
+
+      nav a {padding: 0.4rem 0.5rem;}
+      .profile-img {width: 100px; height: 100px;}
+      main {padding: 3rem 5% 2rem;}
+      .skills {margin-top: 2rem; padding: 0 5%;}
+      .skills h2 {margin-bottom: 0rem;}
+      .view-project a {padding: 10px 25px; font-size: 14px;}
+      .button {padding: 10px 25px; font-size: 14px;}
+      .projects h2 {margin-bottom: 1.5rem;}
+      section.projects {margin-top: 0rem;}
+      .about {margin: 0.5rem auto;}
+      .project-card {padding: 25px;}
+      .skill-category {padding: 1.3rem;}
+      footer {margin-top: 2rem;}
+      .social a {width: 40px; height: 40px; font-size: 15px;}
+      .project-card h3 {font-size: 24px;}
+      .project-grid {gap: 1.5rem;}
+      header {padding: 10px 4%;}
     }
     @media (max-width: 992px) {
       .project-grid {grid-template-columns: repeat(2, 1fr);}
     }
     @media (max-width: 576px) {
-      .project-grid {grid-template-columns: 1fr;}
+      .project-grid {grid-template-columns: 1fr; margin-top: 1rem; gap: 1.3rem;}
+      header {padding: 10px 4%; flex-direction: column; justify-content: center; gap: 10px;}
+      
     }
     @media (max-width: 480px) {
-      .skills-container {grid-template-columns: 1fr;}
+      .skills-container {grid-template-columns: 1fr; margin-top: 1rem;}
     }
   </style>
 </head>
